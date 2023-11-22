@@ -39,3 +39,21 @@ Post
 POSTmethod는 리소스를 생성/업데이트하기 위해 서버에 데이터를 보내는 데 사용됩니다.
 GET과 달리 전송해야 될 데이터를 HTTP 메시지의 Body에 담아서 전송합니다. 그리고 그 Body의 타입은 요청 헤더의 Content-Type에 요청 데이터의 타입을 표시 따라 결정됩니다. (POST로 요청을 보낼 때는 해야 합니다.)
 HTTP 메시지의 Body는 길이의 제한 없이 데이터를 전송할 수 있습니다. 그래서 POST 요청은 GET과 달리 대용량 데이터를 전송할 수 있는 이유도 이 때문입니다.
+
+Middleware 중간에 있는 소프트웨어 , req와 res사이에 존재함. 브라우저에 요청이 있고 응답하기 전에 위치하는 것.
+모든 Middleware은 hanlder고 모든 hanlder는 Middleware다
+
+app.use -> global middleware를 만들게 해줌 , 즉 어느 URL에도 작동하는 middleware
+대신 use 코드를 url위에 배치시켜놔야함. express는 모든걸 위에서 아래순으로 실행시킴
+
+Morgan
+NodeJS를 위한 HTTP request logger
+GET , path , status code 이 모든 정보를 가지고 있음 , 굳이 req 함수써서 일일히 확인안해도됨
+옵션 dev , combined , common 등등..
+
+라우터는 url의 시작점일 뿐이다.
+
+Export
+-> Export default로 쓰는 경우는 하나밖에 못씀 그래서 변수 선언시 export 미리 선언
+-> Export default로 임포트한 변수는 아무이름으로 변경이 가능하지만 export선언하면서 만든 변수는
+무조건 그 이름대로 해야함 그래서 오브젝트 타입으로 가져옴.
