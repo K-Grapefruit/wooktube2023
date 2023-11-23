@@ -9,6 +9,8 @@ const PORT = 4000;
 //express function을 사용하면 application(server) 생성됨
 const app = express();
 
+//HTML을 PUG로 쓰겠다 명시
+app.set("view engine", "pug");
 //logger(morgan) 함수는 middleware를 리턴해줌
 app.use(logger("dev"));
 //라우팅 하기

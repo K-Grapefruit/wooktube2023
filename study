@@ -51,9 +51,23 @@ NodeJS를 위한 HTTP request logger
 GET , path , status code 이 모든 정보를 가지고 있음 , 굳이 req 함수써서 일일히 확인안해도됨
 옵션 dev , combined , common 등등..
 
-라우터는 url의 시작점일 뿐이다.
+라우터는 url의 시작점일 뿐이다. 
+라우터는 url이 어떻게 시작하는지 따라 나누는 방법(그룹화)->공통 시작부분을 기반으로 url을 정리하는 방법
 
 Export
 -> Export default로 쓰는 경우는 하나밖에 못씀 그래서 변수 선언시 export 미리 선언
 -> Export default로 임포트한 변수는 아무이름으로 변경이 가능하지만 export선언하면서 만든 변수는
 무조건 그 이름대로 해야함 그래서 오브젝트 타입으로 가져옴.
+
+Url Parameters ( /:blahblah )
+-url안에 변수를 포함시킬 수 있게 해줌 , 동영상이 많을 시 일일이 동영상에 번호를 매기면 너무 많아짐. 라우팅 처리할게 너무 많음. 그래서 파라미터가 존재
+- 조회 -> 컨트롤러에서 req.param -> express는 이 변수를 가지고 있다는 것을 이해함
+
+정규식
+- 문자열로부터 특정 정보를 추출해내는 방법
+
+Templates
+HTML사용을 위한 PUG설치 -> app.set("view engine" , "pug")
+설정을 하면 자동으로 EXPRESS가 뷰를 찾게되는데 명시된 규칙처럼 설정해야한다.
+/views라는 디렉토리를 찾음. 그리고 pug가 이 파일을 렌더링해서 평범한 HTML파일 처럼 만들어준다.
+컨트롤러에서 res.render("파일이름")으로 렌더링
